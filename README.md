@@ -25,5 +25,34 @@ Lo primero a pensar en este problema son los siguientes puntos:
 #### Ejemplo
 
 ```
-[['Jaime',334], ['Ema', 376]]
+[['Jaime', 334], ['Ema', 376]]
+```
+
+De manera inicial, se creara la funcion que creará la matriz de jugadores, la que almacenará los puntajes obtenidos a lo largo del juego:
+
+```
+function buildMatrix(players: ArrayOfString): Matrix_player
+```
+
+Esta toma un arreglo de strings con los nombres de jugadores y entrega el output de la matriz mencionada anteriormente, con sus puntajes iniciales. Adicionalmente se agregará un tercer valor 
+
+#### Ejemplo
+
+```
+>> buildMatrix(['Jaime', 'Ema'])
+<- [['Jaime', 501], ['Ema', 501]]
+```
+
+Para ingresar el input de los string en un array, solo basta con un ´´´rest operator´´´.
+
+
+#### Ejemplo
+
+```
+function play_game(...names_players) {
+
+    // code of simulation
+
+    return 'finish game';
+  }
 ```
