@@ -3,7 +3,7 @@ const readline = require('readline');
 const rl = readline.createInterface(process.stdin, process.stdout);
 
 // ['DB', [3,20], [3,19]]
-const initial_score = async (array) => return rl.question('Ingrese Puntaje ', (p1) => {
+const initial_score = async (array) => await rl.question('Ingrese Puntaje ', (p1) => {
 	if ( parseInt(p1)!== 501) {
     array.push(parseInt(p1))
     console.log(array)
