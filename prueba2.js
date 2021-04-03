@@ -32,7 +32,7 @@ const start = async (array) =>{
 
 const aux = [10]
 
-initial_score(aux).then((result)=>{
+initial_score(aux).catch((result)=>{
     console.log(result)
     if(result === 'exit-promise'){
         console.log('finish')
