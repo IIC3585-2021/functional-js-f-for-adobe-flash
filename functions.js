@@ -33,6 +33,7 @@ const build_matrix = (initial_function) => (players_array) => {
 
 const get_info = build_matrix(initial_score);
 
+const compare_turns = (original_turn) => (to_compare) => (first_turn !== to_compare)
 
 
 
@@ -43,12 +44,14 @@ function* infinite(array_player) {
     	array_player[index][1] -= 1 // esto se cambia a quitar puntaje
     	if(array_player[index][1] === 0){
     		console.log('Gano ', array_player[index][0])
-    		return 
+    		return
     	}
     	console.log(array_player[index])
         yield index++;
         if (index === array_player.length) {index = 0;}
     }
 }
+
+
 
 

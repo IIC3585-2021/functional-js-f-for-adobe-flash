@@ -34,13 +34,13 @@ De manera inicial, se creara la funcion que creará la matriz de jugadores, la q
 function buildMatrix(players: ArrayOfString): Matrix_player
 ```
 
-Esta toma un arreglo de strings con los nombres de jugadores y entrega el output de la matriz mencionada anteriormente, con sus puntajes iniciales. Adicionalmente se agregará un tercer valor 
+Esta toma un arreglo de strings con los nombres de jugadores y entrega el output de la matriz mencionada anteriormente, con sus puntajes iniciales. Adicionalmente se agregará un tercer valor hacer uso de quién es el turno.
 
 #### Ejemplo
 
 ```
 >> buildMatrix(['Jaime', 'Ema'])
-<- [['Jaime', 501], ['Ema', 501]]
+<- [['Jaime', 501, 0], ['Ema', 501, 0]]
 ```
 
 Para ingresar el input de los string en un array, solo basta con un ´´´rest operator´´´.
