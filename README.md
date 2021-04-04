@@ -57,4 +57,4 @@ function play_game(...names_players) {
   }
 ```
 
-Para el manejo del juego, y para seguir el paradigma funcional, ocupamos
+Para el manejo del juego, y para seguir el paradigma funcional, ocupamos una función recursiva de la fora

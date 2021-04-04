@@ -31,7 +31,7 @@ const build_matrix = (initial_function) => (players_array) => {
 
 const get_info = build_matrix(initial_score);
 
-const compare_turns = (original_turn) => (to_compare) => (first_turn !== to_compare)
+const compare_turns = (original_turn) => (to_compare) => (original_turn !== to_compare)
 
 
 const readline = require('readline');
@@ -83,7 +83,8 @@ const recursive_game = (score_calculator, turn_comparison, input_function, parse
     console.log(`El jugador ${winners[0][0]} ha gclearanado la competencia!!!!`)
     return;
   }
-  if (!((players_array.filter(turn_comparison(players_array[0][2]))).length)) {
+  const not_played = players_array.filter(turn_comparison(players_array[0][2]));
+  if (!(not_played.length)) {
     const n_l = await input_function(`Ingrese lanzamientos de ${players_array[0][0]}:\n`);
     const lanzamientos = parse_function(n_l);
     players_array[0][1] = score_calculator(players_array[0][1], lanzamientos);
