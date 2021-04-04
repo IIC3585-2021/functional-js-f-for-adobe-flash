@@ -11,7 +11,7 @@ const get_score = (throw) => {
     return 0;
   }
   else {
-    return throw.reduce((x,y) => x*y)
+    return throw.reduce((x,y) => (x*y));
   }
 };
 
@@ -36,22 +36,45 @@ const get_info = build_matrix(initial_score);
 const compare_turns = (original_turn) => (to_compare) => (first_turn !== to_compare)
 
 
+const readline = require('readline');
 
-function* infinite(array_player) {
-    let index = 0;
+const rl = readline.createInterface(process.stdin, process.stdout);
 
-    while (true) {
-    	array_player[index][1] -= 1 // esto se cambia a quitar puntaje
-    	if(array_player[index][1] === 0){
-    		console.log('Gano ', array_player[index][0])
-    		return
-    	}
-    	console.log(array_player[index])
-        yield index++;
-        if (index === array_player.length) {index = 0;}
-    }
+exports.question = function(q){
+
+  let response;
+
+  rl.setPrompt(q);
+  rl.prompt();
+  return new Promise(( resolve , reject) => {
+
+    rl.on('line', (userInput) => {
+        response = userInput;
+        rl.close();
+    });
+
+    rl.on('close', () => {
+        resolve(response);
+    });
+
+  });
 }
 
+const get_input = exports.question;
 
+const parse_tuple = (tup) => {
+  return tup.slice(1,-1).split(",").map(x => parseInt(x))
+}
 
+const parse_array = (tuple_parser) => (array_str) => {
+  let aux = array_str.slice(1,-1).split(", ")
+  return aux.map(x => {
+    if (x[0] === "[") {
+      return tuple_parser(x)
+    } else {
+      return x.slice(1,-1)
+    }
+  })
+}
 
+const parse_throw_array = parse_array(parse_tuple);

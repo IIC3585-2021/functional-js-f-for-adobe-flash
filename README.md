@@ -56,3 +56,5 @@ function play_game(...names_players) {
     return 'finish game';
   }
 ```
+
+Para el manejo del juego, y para seguir el paradigma funcional, ocupamos
