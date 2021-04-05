@@ -58,3 +58,12 @@ function play_game(...names_players) {
 ```
 
 Para el manejo del juego, y para seguir el paradigma funcional, ocupamos una función recursiva de la fora
+
+
+#### NOTA IMPORTANTE
+
+Por temas de tiempo, no pudimos hacer funcionar el input con readline de NodeJS sin que destruya la lógica de la recursión. Por tanto, los puntajes agregados son los mismos por defecto, o también puede darse un archivo .txt para leer las jugadas.
+
+Adicionalmente, no pudimos hacer funcionar import modules, por lo que todas las funciones se encuentran en un solo archivo.
+
+
