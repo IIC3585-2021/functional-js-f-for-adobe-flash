@@ -144,4 +144,4 @@ Y(recursive_game(new_score, compare_turns, parse_throw_array))(players_array);
 // ['SB', [2,20], [3,20]]
 // Ema queda con 376 puntos. Ingrese lanzamientos de Jaime
 
-// anitalavalatina
+// console.log(parse_throw_array("['SB', [2,20], [3,20]]"));
